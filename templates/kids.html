@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Children Enquiry Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/kids.css') }}">
+
+    
+</head>
+<body>
+    <div class="container">
+        <h2 class="form-message">Fill up the form so we can stay connected with you</h2>
+        <form id="enquiryForm">
+            <!-- Parent's/Guardian's Name -->
+            <!-- <label>Parent's/Guardian's Name:</label> -->
+            <div class="name-fields">
+                <select id="parentSalutation" name="parentSalutation" required>
+                    <option value="mr">Mr.</option>
+                    <option value="ms">Ms.</option>
+                    <option value="mrs">Mrs.</option>
+                </select>
+                <input type="text" id="parentFirstName" name="parentFirstName" placeholder="First Name" required>
+                <input type="text" id="parentLastName" name="parentLastName" placeholder="Last Name" required>
+            </div>
+
+            <!-- Country and City -->
+            <label for="country-city"></label>
+            <div class="inline-fields">
+                <input type="text" id="country" name="country" placeholder="Country" required>
+                <input type="text" id="city" name="city" placeholder="City" required>
+            </div>
+
+            <!-- Child's Details Section -->
+            <div id="childrenSection">
+                <div class="child-section">
+                    <label>Child's Name:</label>
+                    <div class="name-fields">
+                        <input type="text" name="childFirstName[]" placeholder="First Name" required>
+                        <input type="text" name="childLastName[]" placeholder="Last Name" required>
+                    </div>
+                    <label for="age-grade"></label>
+                    <div class="inline-fields">
+                        <input type="number" name="age[]" placeholder="Age" required>
+                        <input type="text" name="grade[]" placeholder="Grade" required>
+                    </div>
+                    <label for="gender">Gender:</label>
+                    <select name="gender[]" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Button to Add Another Child -->
+            <button type="button" class="add-child-button" onclick="addChild()">Add Another Child</button>
+
+            <!-- Contact Details -->
+            <label for="contact">Phone Number and Email:</label>
+            <div class="inline-fields">
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+
+            <button type="submit" class="cta-button">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function addChild() {
+            // Container for child details
+            const childSection = document.createElement('div');
+            childSection.classList.add('child-section');
+            childSection.innerHTML = `
+                <label>Child's Name:</label>
+                <div class="name-fields">
+                    <input type="text" name="childFirstName[]" placeholder="First Name" required>
+                    <input type="text" name="childLastName[]" placeholder="Last Name" required>
+                </div>
+                <label for="age-grade">Age and Grade:</label>
+                <div class="inline-fields">
+                    <input type="number" name="age[]" placeholder="Age" required>
+                    <input type="text" name="grade[]" placeholder="Grade" required>
+                </div>
+                <label for="gender">Gender:</label>
+                <select name="gender[]" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            `;
+            document.getElementById('childrenSection').appendChild(childSection);
+        }
+    </script>
+</body>
+</html>

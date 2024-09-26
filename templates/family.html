@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storyteller Enquiry Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/family.css') }}">
+    <script>
+        function updatePhoneCode() {
+            const countryElement = document.getElementById('country');
+            const phoneElement = document.getElementById('phone');
+            const country = countryElement.value;
+
+            const countryCodes = {
+                "India": "+91",
+                "USA": "+1",
+                "UK": "+44",
+                "Australia": "+61",
+                // Add more country codes here
+            };
+
+            phoneElement.value = countryCodes[country] || '';
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="form-message">Fill up the form so we can stay connected with you</h2>
+        <form>
+            <label>Storyteller's Name:</label>
+            <div class="name-fields">
+                <select id="salutation" name="salutation" required>
+                    <option value="mr">Mr.</option>
+                    <option value="ms">Ms.</option>
+                    <option value="mrs">Mrs.</option>
+                </select>
+                <input type="text" id="storytellerFirstName" name="storytellerFirstName" placeholder="First Name"
+                    required>
+                <input type="text" id="storytellerLastName" name="storytellerLastName" placeholder="Last Name" required>
+            </div>
+
+            <label for="age-country-city"></label>
+            <div class="inline-fields">
+                <input type="number" id="age" name="age" required placeholder="Age">
+                <select id="country" name="country" onchange="updatePhoneCode()" required>
+                    <option value="">Select Country</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                    <option value="Australia">Australia</option>
+                    <!-- Add more countries here -->
+                </select>
+                <input type="text" id="city" name="city" placeholder="Enter your city" required>
+            </div>
+
+            <label for="contact-info"></label>
+            <div class="inline-fields">
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                <input type="text" id="language" name="language" placeholder="Enter your preferred languages" required>
+            </div>
+
+            <button type="submit" class="cta-button">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

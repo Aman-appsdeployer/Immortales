@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immortales</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+ <body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="#" class="logo" aria-label="Immortales Home">
+                <span class="immortales">Immortales</span><br>
+                <span class="tagline">Progressive Heritage</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#hero" aria-label="Navigate to Home">Home</a></li>
+                    <li><a href="#services" aria-label="Navigate to Our Services">Our Services</a></li>
+                    <li><a href="#about" aria-label="Navigate to About Us">About Us</a></li>
+                    <li><a href="https://immortalesreads.blogspot.com/" aria-label="Navigate to Blog">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="{{ url_for('static', filename='images/img01.png') }}" alt="Los Angeles" style="width:100%;">
+                    </div>
+                    <div class="item">
+                        <img src="{{ url_for('static', filename='images/img02.jpg') }}" alt="Chicago" style="width:100%;">
+                    </div>
+                    <div class="item">
+                        <img src="{{ url_for('static', filename='images/img03.png') }}" alt="New York" style="width:100%;">
+                    </div>
+                    <div class="item">
+                        <img src="{{ url_for('static', filename='images/img04.jpg') }}" alt="New York" style="width:100%;">
+                    </div>
+                </div>
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <h1><b>Preserve Your Legacy, Embrace Your Culture</b></h1>
+            <p>Connecting Generations Through Cultural Wisdom and Family Stories</p>
+            <a href="{{ url_for('family') }}" class="cta-button">Get Started</a>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="heading">
+                <h2>Our Services</h2>
+            </div>
+            <div class="service">
+                <div class="service-text">
+                    <h3>Cultural Education for Kids</h3>
+                    <h4>Igniting Young Minds with Indian Heritage</h4>
+                    <p>Immerse your children in the rich tapestry of Indian culture with our engaging and interactive courses. Designed for grades up to 5 this year, our curriculum offers a deep dive into Indian traditions, values, and history.</p>
+                    <a href="{{ url_for('cultural') }}" class="cta-button">Know More</a>
+                </div>
+                <div class="service-image">
+                    <img src="{{ url_for('static', filename='images/Cultural.jpg') }}" alt="Cultural Education">
+                </div>
+            </div>
+            <div class="service">
+                <div class="service-image">
+                    <img src="{{ url_for('static', filename='images/Family.png') }}" alt="Family Story Writing">
+                </div>
+                <div class="service-text">
+                    <h3>Family Story Writing & Preservation</h3>
+                    <h4>Cherishing and Documenting Your Family's Legacy</h4>
+                    <p>Capture and celebrate your family's unique story with our bespoke writing and preservation services. We work closely with you to document your family's history, traditions, and personal anecdotes.</p>
+                    <a href=" {{ url_for('family_story') }} " class="family-button">Know More</a>
+                </div>
+            </div>
+            <div class="cta-button-container">
+                <a href="#services" class="scta-button">Explore Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-text">
+                <h1>About Us</h1>
+                <p>"At Immortales, we are driven by a profound passion for preserving the essence of Indian culture and family wisdom. Our dedicated team combines expertise with heart to create experiences that celebrate our heritage."</p>
+            </div>
+        </div>
+    </section>
+     <!-- Blog Section -->
+     <section id="blog" class="blog">
+        <div class="container">
+            <h1>Our Blog</h1>
+            <p>Explore our latest articles about cultural heritage and family legacy. Stay connected for insights and
+                tips on preserving your own family stories.</p>
+            <a href="https://immortalesreads.blogspot.com/" class="our-cta-button">Read Our Blog</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Immortales. All rights reserved.</p>
+            <div class="social-media">
+                <a href="https://www.linkedin.com/company/immortales/about/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/immortales.co.in?igsh=Z3ZrYjVoenRsdDQ%3D" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Gallery slider functionality
+            const items = document.querySelectorAll('.gallery-item');
+            let currentIndex = 0;
+
+            function showItem(index) {
+                items.forEach((item, i) => {
+                    item.classList.toggle('active', i === index);
+                });
+            }
+
+            document.getElementById('next').addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % items.length;
+                showItem(currentIndex);
+            });
+
+            document.getElementById('prev').addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                showItem(currentIndex);
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    currentIndex = (currentIndex + 1) % items.length;
+                    showItem(currentIndex);
+                } else if (e.key === 'ArrowLeft') {
+                    currentIndex = (currentIndex - 1 + items.length) % items.length;
+                    showItem(currentIndex);
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            var slideCount = 0;
+            var maxCycles = 4;  // Number of full cycles to allow
+
+            $('#myCarousel').on('slid.bs.carousel', function () {
+                slideCount++;
+                var totalSlides = $('.carousel-inner .item').length;
+
+                // If we've completed 'maxCycles' transitions, stop the carousel
+                if (slideCount >= (totalSlides * maxCycles)) {
+                    $('#myCarousel').carousel('pause');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

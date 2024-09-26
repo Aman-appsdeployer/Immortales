@@ -1,0 +1,138 @@
+body {
+    font-family: 'Calibri', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f0f8ff;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Message */
+.form-message {
+    text-align: center;
+    color: #FF9933;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Form Styles */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Name fields */
+.name-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.name-fields select {
+    width: 15%;
+}
+
+.name-fields input {
+    width: calc(42.5% - 5px);
+}
+
+/* Inline fields */
+.inline-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.inline-fields input,
+.inline-fields select {
+    width: calc(48%);
+}
+
+/* Adjust age field size */
+.inline-fields input#age {
+    width: 20%;
+}
+
+.inline-fields select#country,
+.inline-fields input#city {
+    width: calc(40%);
+}
+
+/* Call to Action Button */
+.cta-button {
+    display: inline-block;
+    background: #ff9933;
+    color: #fff;
+    padding: 15px 0;
+    font-family: 'Calibri', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.cta-button:hover {
+    background: #e68a00;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .name-fields input,
+    .name-fields select,
+    .inline-fields input,
+    .inline-fields select {
+        width: 100%;
+    }
+
+    .name-fields,
+    .inline-fields {
+        flex-direction: column;
+    }
+
+    .cta-button {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-message {
+        font-size: 1.2rem;
+    }
+
+    input,
+    select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .cta-button {
+        font-size: 16px;
+        padding: 12px 0;
+    }
+}
