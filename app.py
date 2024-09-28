@@ -22,6 +22,10 @@ def cultural():
 @app.route('/kids')
 def kids():
     return render_template('kids.html')
+    
+@app.route('/Immortales')
+def Immortales():
+    return render_template('Immortales.html')
 
 if __name__ == '__main__':
     # Use the PORT environment variable if it exists, otherwise default to port 5000
